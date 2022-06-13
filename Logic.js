@@ -13,7 +13,7 @@ class Logic {
     const isName = this.db.find((item) => {
       return item.participant === data.participant;
     });
-    const message = !isName ? `Добро пожаловать, ${data.participant}`: `Имя ${data.participant} занято`;
+    const message = !isName ? `Добро пожаловать, ${data.participant}`: `Имя "${data.participant}" занято`;
     // Если нет добавляем в БД
     if(!isName) {
       this.db.push({id: data.id, participant: data.participant});
